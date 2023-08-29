@@ -13,6 +13,11 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
+
+    // @Bean memberService -> new MemoryMemberRepository()
+    // @Bean orderService -> new MemoryMemberRepository()
+    // 2번 호출 했으니 싱글톤이 깨지는 거 아닌가요????? >
+
     @Bean
     public MemberService memberService() {
         // 생성자 주입
