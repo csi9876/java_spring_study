@@ -9,14 +9,15 @@ public class SingletonService {
         return instance;
     }
 
-    // 다른 클래스에서 못 쓰도록 설정
+    // 딱 1개의 객체 인스턴스만 존재해야 하므로, 생성자를 private으로 막아서 혹시라도 외부에서 new
+    //키워드로 객체 인스턴스가 생성되는 것을 막는
     private SingletonService() {
 
     }
-
-    public static void main(String[] args) {
-        SingletonService singletonService1 = new SingletonService();
-        SingletonService singletonService2 = new SingletonService();
+    
+    public void logic() {
+        System.out.println("싱글톤 객체로직 호출");
     }
+
 
 }
