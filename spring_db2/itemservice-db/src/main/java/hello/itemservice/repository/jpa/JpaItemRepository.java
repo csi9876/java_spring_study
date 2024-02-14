@@ -53,6 +53,8 @@ public class JpaItemRepository implements ItemRepository {
         Integer maxPrice = cond.getMaxPrice();
         String itemName = cond.getItemName();
 
+        // 동적 쿼리 문제
+
         if (StringUtils.hasText(itemName) || maxPrice != null) {
             jpql += " where";
         }
